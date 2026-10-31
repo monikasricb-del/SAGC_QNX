@@ -1,4 +1,4 @@
-ARTIFACT = sagc_p3
+ARTIFACT = sagc_p5
 
 #Build architecture/variant string, possible values: x86, armv7le, etc...
 PLATFORM ?= aarch64le
