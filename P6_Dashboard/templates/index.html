@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAGC - Smart Ambulance Green Corridor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1>Smart Ambulance Green Corridor</h1>
+        <p>Real-Time Emergency Traffic Management System</p>
+    </header>
+
+    <main>
+        <section class="overview">
+            <h2>System Overview</h2>
+            <div class="cards">
+                <div class="card"><h3>Ambulances</h3><p>4</p></div>
+                <div class="card"><h3>Junctions</h3><p>4</p></div>
+                <div class="card"><h3>Active Corridors</h3><p>0</p></div>
+                <div class="card"><h3>System Status</h3><p>SIMULATION</p></div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Ambulance Monitoring</h2>
+            <div id="ambulance-container">Loading ambulance data...</div>
+        </section>
+
+        <section>
+            <h2>Junction Monitoring</h2>
+            <div id="junction-container">Loading junction data...</div>
+        </section>
+
+        <section>
+            <h2>Route Recommendations</h2>
+            <div id="route-container">
+                <div class="monitor-card">
+                    <h3>AMB01 - Route Recommendation</h3>
+                    <p><strong>Current Route:</strong> J1 → J2 → J4</p>
+                    <p><strong>Suggested Route:</strong> J1 → J3 → J4</p>
+                    <p><strong>Status:</strong> <span id="route-status">Pending Operator Approval</span></p>
+                    <div class="route-buttons">
+                        <button class="accept-btn" onclick="approveRoute()">Accept Route</button>
+                        <button class="reject-btn" onclick="rejectRoute()">Reject Route</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Component Health Monitoring</h2>
+            <div id="component-container"></div>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='dashboard.js') }}"></script>
+</body>
+</html>
